@@ -2,7 +2,7 @@
   "name": "quote-cards",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://annapushka.github.io/",
+  "homepage": "https://annapushka.github.io/quote-cards/",
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
