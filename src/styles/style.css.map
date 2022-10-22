@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss","../components/QuoteList/_QuoteList.scss","style.css","../components/QuoteCard/_QuoteCard.scss"],"names":[],"mappings":"AAEQ,gJAAA;ACFR;EACI,aAAA;EACA,eAAA;EACD,uBAAA;ACEH;;ACLA;EACI,UAAA;ADQJ;;AFLA;EACI,sBAAA;EACA,iCAAA;EACA,iCAAA;EACA,YAAA;AEQJ;;AFLA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;AEQJ","file":"style.css"}
