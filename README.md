@@ -1,14 +1,14 @@
 # QuoteCardApp
 
 ## Technology stack
-<p><img src="src/img/HTML.png" alt="HTML" width="100rem"/>
-<img src="src/img/CSS.png" alt="CSS" width="100rem"/>
-<img src="src/img/JS.png" alt="JS" width="100rem"/>
-<img src="src/img/TS.png" alt="TS" width="100rem"/>
-<img src="src/img/react.png" alt="react" width="100rem"/>
-<img src="src/img/Redux.png" alt="redux" width="100rem"/>
-<img src="src/img/MUI.png" alt="MUI" width="100rem"/>
-<img src="src/img/sass.png" alt="sass" width="100rem"/>
+<p><img src="src/img/HTML.png" alt="HTML" width="90rem"/>
+<img src="src/img/CSS.png" alt="CSS" width="90rem"/>
+<img src="src/img/JS.png" alt="JS" width="90rem"/>
+<img src="src/img/TS.png" alt="TS" width="90rem"/>
+<img src="src/img/react.png" alt="react" width="90rem"/>
+<img src="src/img/Redux.png" alt="redux" width="90rem"/>
+<img src="src/img/MUI.png" alt="MUI" width="90rem"/>
+<img src="src/img/sass.png" alt="sass" width="90rem"/>
 </p>
 
 ## Result
