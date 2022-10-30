@@ -30,7 +30,7 @@ interface FetchQuotesErrorAction {
 
 interface SetLikeFilterAction {
     type: QuoteActionTypes.SET_LIKE_FITER;
-    likeFilter: boolean;
+    payload: boolean;
 }
 
 export type QuoteAction = FetchQuotesAction | FetchQuotesSuccessAction | FetchQuotesErrorAction | SetLikeFilterAction;

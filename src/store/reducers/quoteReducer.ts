@@ -17,7 +17,7 @@ export const quoteReduser = (state = initialState, action: QuoteAction): QuoteSt
         case QuoteActionTypes.FETCH_QUOTES_ERROR:
             return { loading: false, error: action.payload, quotes: [], likeFilter: false }
         case QuoteActionTypes.SET_LIKE_FITER:
-            return { ...state, likeFilter: action.likeFilter }
+            return { ...state, likeFilter: action.payload }
         default:
             return state
     }

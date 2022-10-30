@@ -20,6 +20,11 @@ export const fetchQuotes = () => {
     }
 }
 
-export const setLikeFilter = (likeFilter: boolean): QuoteAction => {
-    return { type: QuoteActionTypes.SET_LIKE_FITER, likeFilter: likeFilter }
+export const setLikeFilter = (likeFilter: boolean) => {
+    return (dispatch: Dispatch<QuoteAction>) => {
+        dispatch({
+            type: QuoteActionTypes.SET_LIKE_FITER,
+            payload: likeFilter
+        })
+    }
 }
