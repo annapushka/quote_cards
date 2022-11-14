@@ -12,7 +12,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-let classNames = require('classnames');
+import classNames from 'classnames';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -42,12 +42,12 @@ const QuoteCard = (props: Props) => {
     const [show, setShow] = useState(true);
 
     const classes = useStyles();
-    let favoriteClass = classNames({
+    const favoriteClass = classNames({
         'like': favorite,
     });
 
     const handlerFavoriteClick = () => {
-        setFavorite(prevState => !prevState)
+        setFavorite(prevState => !prevState);
     }
 
     const handlerDelete = () => {
