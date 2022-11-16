@@ -6,7 +6,7 @@ import Loading from '../Loading/Loading';
 import QuoteCard from '../QuoteCard/QuoteCard';
 
 const QuoteList: React.FC = () => {
-    const { quotes, loading, error } = useTypedSelector(state => state.quote)
+    const { quotes, loading, error, likeFilter } = useTypedSelector(state => state.quote)
     const { fetchQuotes } = useActions();
 
     useEffect(() => {
@@ -22,11 +22,15 @@ const QuoteList: React.FC = () => {
         return <Error />
     }
 
-    return (
+    return ((likeFilter) ? (
         <div className="quote-list" >
-            {quotes.map((quote, index) => <QuoteCard {...quote} key={index} />)}
+            {quotes.filter(quote => quote.liked).map(quote => <QuoteCard {...quote} key={quote.id} />)}
         </div>
-    );
+    ) : (
+        <div className="quote-list" >
+            {quotes.filter(qoute => !qoute.deleted).map(quote => <QuoteCard {...quote} key={quote.id} />)}
+        </div>
+    ));
 };
 
 export default QuoteList;

@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.likedQuote {
+  color: red;
+}
+
 .like {
   color: red;
 }

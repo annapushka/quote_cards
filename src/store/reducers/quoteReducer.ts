@@ -18,6 +18,10 @@ export const quoteReduser = (state = initialState, action: QuoteAction): QuoteSt
             return { loading: false, error: action.payload, quotes: [], likeFilter: false }
         case QuoteActionTypes.SET_LIKE_FITER:
             return { ...state, likeFilter: action.payload }
+        case QuoteActionTypes.SET_LIKE:
+            return { ...state, quotes: action.payload }
+        case QuoteActionTypes.DELETE_QUOTE:
+            return { ...state, quotes: action.payload }
         default:
             return state
     }

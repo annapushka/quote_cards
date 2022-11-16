@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -10,20 +10,21 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import classNames from 'classnames';
+import { useActions } from '../../hooks/useActions';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
+        rootCard: {
             width: 290,
             margin: '1rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between'
         },
-        avatar: {
+        avatarCard: {
             backgroundColor: red[500],
         },
     }),
@@ -32,57 +33,42 @@ const useStyles = makeStyles((theme: Theme) =>
 interface Props {
     quote: string;
     author: string;
+    id: string;
+    liked: boolean;
+    deleted: boolean;
 }
 
 const QuoteCard = (props: Props) => {
 
-    const { likeFilter } = useTypedSelector(state => state.quote)
-    const { quote, author } = props;
-    const [favorite, setFavorite] = useState(false);
-    const [show, setShow] = useState(true);
+    const { setLike, deleteQuote } = useActions();
+
+    const { quote, author, id, liked, deleted } = props;
+    const [favorite, setFavorite] = useState(liked);
+    const [unShow, setUnShow] = useState(deleted);
 
     const classes = useStyles();
     const favoriteClass = classNames({
-        'like': favorite,
+        'likedQuote': favorite,
     });
 
     const handlerFavoriteClick = () => {
         setFavorite(prevState => !prevState);
+        setLike(id, !favorite);
     }
 
     const handlerDelete = () => {
-        setShow(false)
+        setUnShow(prevState => !prevState);
+        deleteQuote(id, !unShow);
+        setFavorite(prevState => !prevState);
+        setLike(id, !favorite);
     }
 
 
-    return (likeFilter ? (favorite ? (
-        <Card className={classes.root}>
+    return (
+        <Card className={classes.rootCard}>
             <CardHeader
                 avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        {author[0]}
-                    </Avatar>
-                }
-                title={author}
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {quote}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton
-                    aria-label="add to favorites"
-                    onClick={handlerFavoriteClick}>
-                    <FavoriteIcon className='like' />
-                </IconButton>
-            </CardActions>
-        </Card>
-    ) : (<></>)) : (show ? (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
+                    <Avatar aria-label="recipe" className={classes.avatarCard}>
                         {author[0]}
                     </Avatar>
                 }
@@ -106,7 +92,7 @@ const QuoteCard = (props: Props) => {
                 </IconButton>
             </CardActions>
         </Card>
-    ) : (<></>)));
+    );
 };
 
 export default QuoteCard;

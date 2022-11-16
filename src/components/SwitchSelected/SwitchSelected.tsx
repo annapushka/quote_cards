@@ -56,7 +56,7 @@ const AntSwitch = withStyles((theme: Theme) =>
 export default function SwitchSelected() {
     const { setLikeFilter } = useActions();
 
-    const [state, setState] = useState({ checkedC: false });
+    const [state, setState] = useState({ checked: false });
     const [liked, setLiked] = useState(false);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,7 +71,7 @@ export default function SwitchSelected() {
             <Typography component="div">
                 <Grid component="label" container alignItems="center" spacing={0}>
                     <Grid item >
-                        <AntSwitch checked={state.checkedC} onChange={handleChange} name="checkedC" />
+                        <AntSwitch checked={state.checked} onChange={handleChange} name="checked" />
                     </Grid>
                     <FavoriteIcon className='like' />
                 </Grid>
