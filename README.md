@@ -13,7 +13,7 @@
 
 ## Result
 
-[Сlick me](https://annapushka.github.io/quote-cards)<br>
+[Сlick me](https://annapushka.github.io/quote_cards)<br>
 <p><img src="src/img/result1.jpg" alt="card-result" width="400px"/>
 <img src="src/img/result2.jpg" alt="card-result" width="400px"/></p>
 
